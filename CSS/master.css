@@ -1,0 +1,1015 @@
+:root {
+    /* #E0E0E0 */
+    --main-color: #ff07c5;
+    --text-color: #5d5555;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+
+/* start settings box  */
+.settings-box {
+    /* is positioned relative to the viewport,
+ which means it always stays in the same place even if the page is scrolled. */
+    position: fixed;
+    z-index: 5;
+    background-color: #ffff;
+    width: 200px;
+    min-height: 100vh;
+    left: -200px;
+    top: 0;
+    transition: 0.3s;
+    border: 1px solid #EEE;
+}
+
+.gear-container {
+    position: absolute;
+    top: 155px;
+    left: 200px;
+    background-color: #ffff;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.settings-box.open {
+    left: 0;
+}
+
+.settings-box .gear-container .fa-gear {
+    padding: 8px 0;
+    width: 30px;
+    
+
+}
+
+.settings-box .option-box {
+    padding: 10px;
+    text-align: center;
+    background-color: #eee;
+    margin: 10px;
+
+
+}
+
+.settings-box .option-box h4 {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+
+
+}
+
+.settings-box .option-box .colors-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+
+}
+
+.settings-box .option-box .colors-list li {
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+
+
+
+
+}
+
+.settings-box .option-box .colors-list li.active {
+    opacity: 1;
+}
+
+.settings-box .option-box .colors-list li:first-child {
+    background-color: #ff07c5;
+}
+
+.settings-box .option-box .colors-list li:nth-child(2) {
+    background-color: #009688;
+}
+
+.settings-box .option-box .colors-list li:nth-child(3) {
+    background-color: #41746e;
+}
+
+.settings-box .option-box .colors-list li:nth-child(4) {
+    background-color: #924971;
+}
+
+.settings-box .option-box .colors-list li:nth-child(5) {
+    background-color: #7c3440;
+}
+
+.settings-box .option-box .colors-list li:nth-child(6) {
+    background-color: #c5c328;
+}
+
+.settings-box .option-box span.active {
+    opacity: 1;
+}
+
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
+    width: 50px;
+    background-color: var(--main-color);
+    color: #fff;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.settings-box .reset-options{
+    background-color: rgb(233, 62, 10);
+    color: #fff;
+    border: none;
+    width: 178px;
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+/* end settings  box*/
+
+/* Start Nav Bullets */
+.nav-bullets{
+    position: fixed;
+    right: 0;
+    /* Because we want the elemnts to be in the middle of the screen */
+    top: 50%;
+    /* only y-axis (to make sure it is in the middle no matter what is the height) */
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 10;
+}
+.nav-bullets .bullet{
+    width: 20px;
+    height: 20px;
+    border:  3px solid var(--main-color);
+    border-radius: 50%;
+    margin: 20px auto;
+    cursor: pointer;
+    position: relative;
+
+}
+.nav-bullets .bullet .tooltip{
+    position: absolute;
+    background-color: var(--main-color);
+    color: #fff;
+    width: 120px;
+    padding: 8px 10px;
+    right: 32px;
+    top:-10px;
+    text-align: center;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+}
+.nav-bullets .bullet:hover .tooltip{
+    display: block;
+}
+.nav-bullets .bullet .tooltip::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+/* End Nav Bullets */
+
+/* Start landing page */
+.landing-page {
+    /* viewboardheight */
+    min-height: 100vh;
+    background-image: url("../images/02.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.landing-page .overlay {
+    position: absolute;
+    background-color: #00000077;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.landing-page .container {
+    position: relative;
+   
+    z-index: 1000;
+}
+
+.header-area {
+    position: relative;
+    z-index: 2;
+    color: #ffff;
+    display: flex;
+    padding: 10px;
+}
+
+.header-area .logo {
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+  
+ 
+}
+.header-area .links-container{
+    width: 100%;
+    text-align: right;
+}
+.header-area .links {
+    list-style: none;
+    
+    padding-left: 0 px;
+}
+
+.header-area .links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.header-area .links li a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.header-area .links li a:hover,
+.header-area .links li a.active {
+    color: var(--main-color);
+}
+.header-area .toggle-menu {
+    background:none;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    margin-top: 19px;
+    display: none;
+    position: relative;
+
+}
+.header-area .toggle-menu.menu-active::before{
+    content: "";
+    position: absolute;
+    border-style:solid ;
+    border-color:  transparent transparent #fff transparent;
+    top:7px;
+    left: 10px;
+    border-width:10px ;
+}
+.header-area .toggle-menu:focus {
+outline: none;
+
+}
+.header-area .toggle-menu span{
+   display: block;
+   background-color: #fff;
+   margin-bottom: 3px;
+   height: 2px;
+
+}
+.introduction-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #ffff;
+    text-align: center;
+    width: 95%;
+}
+
+@media (max-width:575px){
+    .introduction-text h1{
+        font-size: 26px;
+    }
+}
+
+.introduction-text h1 {
+    font-size: 35px;
+    margin: 0 0 12px;
+}
+
+.introduction-text h1 span {
+    color: var(--main-color);
+}
+
+.introduction-text p {
+    line-height: 2;
+    font-size: 17px;
+    margin: 0;
+}
+
+@media (max-width:991px){
+ .header-area .links{
+    display: none;
+ }
+ .header-area .links.open{
+    background-color: #fff ;
+    padding: 10px;
+    display: block;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    border-radius: 5px;
+    text-align: left;
+    
+ }
+ .header-area .links.open li {
+    display: block;
+    margin: 10px;
+ }
+ .header-area .links.open li a{
+    color: var(--main-color) ;
+    font-weight: bold;
+ }
+ .header-area .toggle-menu{
+    display: inline-block;
+ }
+}
+/* end landing page */
+/* start about us */
+
+.about-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    display: flex;
+
+}
+@media (max-width:767px){
+    .about-us{
+        display: block;
+        text-align: center;
+    }
+    .about-us .info-box {
+        padding: 0px !important;
+    
+    }
+}
+
+.about-us .info-box {
+    flex: 1;
+    padding: 30px;
+
+}
+
+.about-us .info-box h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+
+}
+
+.about-us .info-box p {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.about-us .img-box {
+    flex: 1;
+    text-align: center;
+
+}
+
+.about-us .img-box img {
+    width: 250px;
+
+}
+
+/* end about us */
+/* start skills */
+.skills {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #eee;
+}
+
+.skills h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+
+.skills .skill-box {
+    background-color: #fff;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+/* @media (max-width:767px){
+    .skills .skill-box{
+        display: block;
+    }
+} */
+
+.skills .skill-box .skill-name {
+    text-align: center;
+    width: 100px;
+    font-weight: bold;
+    line-height: 30px;
+
+}
+/* @media (max-width:767px){
+    .skills .skill-box .skill-name{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+} */
+
+.skills .skill-box .skill-progress {
+    height: 30px;
+    width: calc(100% - 100px);
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills .skill-box .skill-progress span {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    left: 0;
+    top: 0;
+    background-color: var(--main-color);
+    transition: all .5s;
+
+
+}
+
+/* end skills */
+
+/* Start Gallery */
+.gallery {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+
+}
+
+.gallery h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+
+.gallery .images-box {
+    text-align: center;
+
+}
+
+.gallery .images-box img {
+    width: 250px;
+    padding: 3px;
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.popup-overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.popup-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.popup-box h3 {
+    text-align: center;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 20px;
+}
+
+.popup-box img {
+    max-width: 100%;
+}
+
+.popup-box .close-button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+/* End Gallery */
+
+/* Start TimeLine */
+.timeline {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #eee;
+
+}
+
+.timeline .timeline-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline .timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: 50%;
+    top: 0;
+    margin-left: -1px;
+
+    /*  left: 50%
+This moves the left edge of the element to the 50% point of its parent container 
+ effectively the center of the container.
+
+But this positions the left edge of the element at the center — not the center of the element itself.
+
+ margin-left: -1px
+Since the element has a width of 2px, its center is 1px from the left edge.
+
+So, by using margin-left: -1px, you're nudging it back by half of its width 
+shifting it left so the center of the line aligns perfectly with the center of the parent. 
+*/
+}
+
+.timeline .timeline-content .year {
+    margin: 20px auto;
+    background-color: var(--main-color);
+    width: 50px;
+    position: relative;
+    padding: 2px 5px;
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.timeline .timeline-content .left,
+.timeline .timeline-content .right {
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+@media (max-width:767px){
+    .timeline .timeline-content .left,
+.timeline .timeline-content .right {
+    width: 100%;
+    margin-bottom: 20px;
+   
+}
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before {
+    display: none;
+}
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before  {
+   display: none;
+}
+}
+
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid var(--main-color);
+    /* 25 + half the width = 7 + 3 border */
+
+    top: 10px;
+
+}
+
+.timeline .timeline-content .left::before {
+    right: -35px;
+}
+
+.timeline .timeline-content .right::before {
+    left: -35px;
+}
+
+.timeline .timeline-content .left {
+    float: left;
+}
+
+.timeline .timeline-content .right {
+    float: right;
+}
+
+.timeline .timeline-content .content {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.timeline .timeline-content .content h3 {
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0, 0, 10px;
+
+}
+
+.timeline .timeline-content .content p {
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+
+}
+
+.clearfix {
+    /* clear: both; is used to prevent floated elements from
+     affecting the layout of the next elements.
+
+When you float elements (like float: left or float: right),
+ their container might collapse (not wrap them properly), 
+ because floated elements are taken out of normal document flow. */
+    clear: both;
+}
+
+.timeline .timeline-content .left .content::before,
+.timeline .timeline-content .right .content::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    top: 10px;
+
+}
+
+.timeline .timeline-content .left .content::before {
+    right: -20px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.timeline .timeline-content .right .content::before {
+    left: -20px;
+    border-color: transparent #fff transparent transparent;
+
+}
+
+/* End Timeline */
+
+/* Start Features */
+.features {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.features h2 {
+    text-align: center;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 60px;
+    font-size: 30px;
+}
+
+.features .feat-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+@media (max-width:991px){
+    .features .feat-box {
+        width: calc(100% / 2);
+       
+        
+    }
+}
+@media (max-width:575px){
+    .features .feat-box {
+        width: 100%;
+        
+    }
+}
+.features .feat-box img {
+    width: 250px;
+}
+
+.features .feat-box h4 {
+    font-size: 22px;
+    margin: 15px 0 40px;
+    position: relative;
+}
+
+.features .feat-box h4::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 40px;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -15px;
+    border-radius: 5px;
+}
+
+.features .feat-box p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* End Features */
+/* Start Testimonials */
+.testimonials {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.testimonials::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+}
+
+.testimonials::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    top: 0;
+    right: 0;
+}
+
+.testimonials h2 {
+    text-align: left;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 60px;
+    font-size: 30px;
+    position: relative;
+    z-index: 2;
+}
+@media (max-width:991px){
+    .testimonials h2{
+        text-align: center;
+    }
+}
+.testimonials .ts-box {
+    position: relative;
+    z-index: 2;
+    width: calc(98% / 3);
+    float: left;
+    background-color: #fff;
+    padding: 20px;
+   
+}
+@media (max-width:767px){
+    .testimonials .ts-box {
+       
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+       
+    }
+}
+/* not the last on the row the first and the second*/
+.testimonials .ts-box:not(:last-of-type){
+    /*  % is always relative to the parent’s width, not the element's. */
+    /* 2% left 1% right to the first item and the second item */
+  margin-right: 1%;
+}
+/* direct child */
+.testimonials .ts-box > p{
+  margin: 0 0 15px;
+  line-height: 1.5;
+  font-size: 15px;
+  color: var(--text-color);
+  font-style: italic;
+}
+.testimonials .ts-box .person-info{
+    overflow: hidden;
+}
+@media (max-width:991px){
+    .testimonials .ts-box .person-info{
+       text-align: center;
+       overflow: visible;
+    }
+  
+}
+.testimonials .ts-box .person-info img{
+    width:80px;
+    height: 80px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 50px;
+}
+@media (max-width:991px){
+    .testimonials .ts-box .person-info img{
+        margin-right: 0px;
+        float: none;
+    }
+  
+}
+.testimonials .ts-box .person-info h4{
+    margin: 14px 0 10px;
+}
+.testimonials .ts-box .person-info p{
+    color: var(--text-color);
+    margin:0;
+    font-size: 15px
+}
+/* End Testimonials */
+/* Start Contact Us */
+.contact{
+    min-height: 600px;
+    background-image: url(../images/dotted-world-map-white-background-vector-illustration_541075-471.avif);
+    background-size: cover;
+    padding-top:80px ;
+    padding-bottom: 80px;
+    position: relative;
+}
+.contact .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.6);
+}
+.contact .container{
+    position: relative;
+    z-index: 2;
+}
+.contact h2{
+    text-align: center;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 60px;
+    font-size: 30px;
+   
+}
+.contact form{
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+}
+.contact form .left{
+    float : left;
+    width: 49%;
+
+}
+.contact form .right{
+    float : right;
+    width: 49%;
+
+}
+@media(max-width:767px){
+    .contact form .left,
+    .contact form .right{
+        float: none;
+        width: 100%;
+    } 
+}
+.contact form input:not([type="submit"]),
+.contact form textarea{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(218,218,218,0.19);
+}
+
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus{
+    outline: 1px solid var(--main-color);
+}
+.contact form input{
+    height: 40px;
+}
+.contact form textarea{
+    height: 150px;
+}
+.contact form input[type="submit"]{
+    padding: 10px;
+    width: 100%;
+    border-color: transparent;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+}
+.contact form textarea:focus::-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder{
+   opacity: 0;
+   transition: .3s;
+}
+.contact form textarea:focus::-ms-input-placeholder,
+.contact form input:not([type="submit"]):focus::-ms-input-placeholder{
+    opacity: 0;
+    transition: .3s;
+ }
+ .contact form textarea:focus::placeholder,
+ .contact form input:not([type="submit"]):focus::placeholder{
+    opacity: 0;
+    transition: .3s;
+ }
+/* End Contact Us */
+/* Start Footer */
+footer{
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding:10px;
+
+}
+/* End Footer */
+/* Start Grid System */
+/* Small Devices => Phones*/
+@media (min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+}
+/* Medium Devices => tablets */
+@media (min-width: 768px){
+    .container{
+        max-width: 520px;
+    }
+}
+/* Large Devices => pc desktops */
+@media (min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+/* very Large Devices => pc desktops */
+@media (min-width: 1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+/* End Grid System */
